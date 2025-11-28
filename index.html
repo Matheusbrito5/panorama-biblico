@@ -7,6 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Seu ID do Pixel
+    fbq('init', '2768297183372796');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2768297183372796&ev=PageView&noscript=1"
+    /></noscript>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
@@ -25,8 +43,24 @@
         .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; }
         .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
-        .cta-button { display: inline-block; background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #1a1a2e; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
+        
+        .cta-button { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); 
+            color: #1a1a2e; 
+            padding: 1rem 2.5rem; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .cta-button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 30px rgba(255,215,0,0.3); 
+        }
         
         /* Product */
         .product-section { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; }
@@ -34,12 +68,11 @@
         .product-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .product-image { text-align: center; perspective: 1000px; }
         
-        /* Ajuste específico para a Capa */
         .product-image img { 
-            max-width: 80%; /* Ajustado para não ficar gigante */
+            max-width: 80%; 
             height: auto; 
-            border-radius: 5px; /* Canto do livro físico */
-            box-shadow: -15px 15px 25px rgba(0,0,0,0.4); /* Sombra realista 3D */
+            border-radius: 5px; 
+            box-shadow: -15px 15px 25px rgba(0,0,0,0.4); 
             transition: transform 0.3s ease;
         }
         .product-image img:hover { transform: scale(1.03) rotateY(-5deg); }
@@ -103,22 +136,8 @@
             .hero { padding: 4rem 1rem; }
             .product-info h2 { font-size: 1.5rem; }
             .price { font-size: 2rem; }
-            .product-image img { max-width: 60%; } /* Menor no mobile */
+            .product-image img { max-width: 60%; }
         }
-        
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
-        .modal-content { background-color: white; margin: 5% auto; padding: 2rem; border-radius: 10px; width: 90%; max-width: 500px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
-        .close { color: #aaa; float: right; font-size: 2rem; font-weight: bold; cursor: pointer; transition: color 0.3s; }
-        .close:hover { color: #000; }
-        .modal h2 { color: #1a1a2e; margin-bottom: 1.5rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; color: #1a1a2e; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; font-family: 'Inter', sans-serif; }
-        .form-group input:focus, .form-group select:focus { outline: none; border-color: #ffd700; box-shadow: 0 0 5px rgba(255,215,0,0.3); }
-        .submit-btn { width: 100%; background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #1a1a2e; padding: 1rem; border: none; border-radius: 5px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: transform 0.3s; }
-        .submit-btn:hover { transform: translateY(-2px); }
-        .success-message { background: #d4edda; color: #155724; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; display: none; }
     </style>
 </head>
 <body>
@@ -138,7 +157,7 @@
         <div class="hero-content">
             <h1>Descubra a Bíblia Completa em 48 Semanas</h1>
             <p>Um guia cronológico estruturado que transforma sua compreensão das Escrituras</p>
-            <button class="cta-button" onclick="openModal()">Comprar Agora - R$ 19,97</button>
+            <button class="cta-button" onclick="goToCheckout()">Comprar Agora - R$ 19,97</button>
         </div>
     </section>
 
@@ -169,7 +188,7 @@
                     <li>Referências bibliográficas completas</li>
                     <li>Acesso vitalício ao material</li>
                 </ul>
-                <button class="cta-button" onclick="openModal()">Comprar Agora</button>
+                <button class="cta-button" onclick="goToCheckout()">Comprar Agora</button>
             </div>
         </div>
     </section>
@@ -316,44 +335,6 @@
         </div>
     </section>
 
-    <div id="purchaseModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Comprar Panorama Cronológico da Bíblia</h2>
-            <div class="success-message" id="successMessage">
-                ✓ Pedido realizado com sucesso! Você receberá um email com o link de download.
-            </div>
-            <form onsubmit="handlePurchase(event)">
-                <div class="form-group">
-                    <label for="name">Nome Completo *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefone (WhatsApp) *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="payment">Método de Pagamento *</label>
-                    <select id="payment" name="payment" required>
-                        <option value="">Selecione uma opção</option>
-                        <option value="credit_card">Cartão de Crédito</option>
-                        <option value="debit_card">Cartão de Débito</option>
-                        <option value="pix">PIX</option>
-                        <option value="boleto">Boleto</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">Finalizar Compra - R$ 19,97</button>
-            </form>
-            <p style="text-align: center; margin-top: 1.5rem; color: #666; font-size: 0.9rem;">
-                💳 Pagamento seguro | 🔒 Seus dados protegidos | ✓ Acesso imediato
-            </p>
-        </div>
-    </div>
-
     <footer id="contato">
         <div class="footer-content">
             <h3 style="margin-bottom: 1rem;">Panorama Cronológico da Bíblia</h3>
@@ -373,26 +354,7 @@
     </footer>
 
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '2768297183372796');
-        fbq('track', 'PageView');
-
-        function openModal() {
-            document.getElementById('purchaseModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('purchaseModal').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'none';
-        }
-
+        // Função para abrir o FAQ
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             const toggle = element.querySelector('.faq-toggle');
@@ -400,33 +362,18 @@
             toggle.classList.toggle('active');
         }
 
-        function handlePurchase(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const payment = document.getElementById('payment').value;
-
-            fbq('track', 'Purchase', {
-                value: 19.97,
-                currency: 'BRL',
-                content_name: 'Panorama Cronológico da Bíblia',
-                content_type: 'product'
-            });
-
-            console.log('Compra realizada:', { name, email, phone, payment });
-            document.getElementById('successMessage').style.display = 'block';
-            event.target.reset();
-            setTimeout(() => { closeModal(); }, 3000);
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('purchaseModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
+        // Função de Checkout inteligente
+        function goToCheckout() {
+            // 1. Avisa o Facebook que a pessoa iniciou o checkout
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout');
             }
+            
+            // 2. Redireciona para o Kiwify
+            window.location.href = 'https://pay.kiwify.com.br/zt5k1x6';
         }
 
+        // Smooth scroll (rolagem suave)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -437,8 +384,5 @@
             });
         });
     </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2768297183372796&ev=PageView&noscript=1" />
-    </noscript>
 </body>
 </html>
